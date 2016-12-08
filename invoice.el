@@ -8,7 +8,7 @@
 ;; Created: 1994-01-01
 ;; Last modified: 1995-06-15
 
-;; $Id: invoice.el,v 1.4 1995/12/15 23:58:12 friedman Exp $
+;; $Id: invoice.el,v 1.5 2016/11/24 20:24:53 friedman Exp $
 
 ;; This program is free software; you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -65,7 +65,7 @@
 (defun invoice-file-number (name)
   (save-match-data
     (and (string-match invoice-file-name-regexp name)
-         (string-to-int (substring name (match-beginning 1) (match-end 1))))))
+         (string-to-number (substring name (match-beginning 1) (match-end 1))))))
 
 (defun invoice-find-latest-file (company)
   (let* ((flist (nreverse (invoice-files-list company)))
